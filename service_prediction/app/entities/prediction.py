@@ -1,4 +1,15 @@
 from pydantic import BaseModel
+from typing import List
+
+class ProfileInput(BaseModel):
+    nome: str
+    idade: str
+    profissao: str
+    disordem: str
+    localizacao: str
+    dificuldades: str
+    persona: str
+    backstory: str
 
 class PredictionRequest(BaseModel):
     """Data model for a prediction request.
@@ -6,4 +17,5 @@ class PredictionRequest(BaseModel):
     Attributes:
         conversa (str): The conversation text.
     """
-    conversa: str
+    conversa: List
+    perfil: ProfileInput
