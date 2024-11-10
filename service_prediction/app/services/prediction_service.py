@@ -11,5 +11,5 @@ async def make_prediction(request: PredictionRequest):
         dict: The prediction result.
     """
     model = PredictionModel()
-    prediction = model.predict(request.conversa)
+    prediction = model.predict(request.prompt)
     return {"prediction": prediction}
